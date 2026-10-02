@@ -27,7 +27,8 @@ function CheckoutForm({ values, books, onChange, onSubmit }: CheckoutFormProps) 
       <h2>Create Checkout</h2>
 
       <div className="form-grid">
-        {/* TODO: Prefill selected book context when opened from book details. */}
+        {/* TODO: Prefill selected book context when opened from book details. 
+        Notes: Selected book prefill is handled by App.tsx when a book is selected. */}
         <label htmlFor="checkout-patron-name">Patron Name</label>
         <input
           id="checkout-patron-name"
@@ -66,7 +67,8 @@ function CheckoutForm({ values, books, onChange, onSubmit }: CheckoutFormProps) 
       </div>
 
       <button onClick={handleSubmit}>Create Checkout</button>
-      {/* TODO: Show submit state and confirmation after successful creation. */}
+      {/* TODO: Show submit state and confirmation after successful creation. 
+      Notes: Form submission and successful-creation handling are also managed by App.tsx. */}
     </section>
   )
 }

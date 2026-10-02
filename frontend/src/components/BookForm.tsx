@@ -79,7 +79,10 @@ function BookForm({ values, genres, onChange, onSubmit }: BookFormProps) {
       </div>
 
       <button onClick={handleSubmit}>Create Book</button>
-      {/* TODO: Show submit state and confirmation after successful creation. */}
+      {/* TODO: Show submit state and confirmation after successful creation. 
+      Notes: Form submission and successful-creation handling are managed by
+      App.tsx, where the API request and resulting application state are
+      directly handled. */}
     </section>
   )
 }
