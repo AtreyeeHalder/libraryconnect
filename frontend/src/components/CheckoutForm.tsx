@@ -8,7 +8,16 @@ type CheckoutFormProps = {
 }
 
 function CheckoutForm({ values, books, onChange, onSubmit }: CheckoutFormProps) {
-  // TODO: Add validation for required fields before submit.
+  // validation for required fields before submit.
+  function handleSubmit() {
+    const requiredFields = [values.patron_name, values.book_id, values.date]
+    if (requiredFields.some((field) => field.trim() === '')) {
+      alert('Please fill in all required fields.')
+      return
+    }
+    onSubmit()
+  }
+
   function update<K extends keyof CheckoutFormValues>(key: K, value: CheckoutFormValues[K]) {
     onChange({ ...values, [key]: value })
   }
@@ -56,7 +65,7 @@ function CheckoutForm({ values, books, onChange, onSubmit }: CheckoutFormProps) 
         />
       </div>
 
-      <button onClick={onSubmit}>Create Checkout</button>
+      <button onClick={handleSubmit}>Create Checkout</button>
       {/* TODO: Show submit state and confirmation after successful creation. */}
     </section>
   )
