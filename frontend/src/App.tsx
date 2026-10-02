@@ -83,6 +83,7 @@ function App() {
       const book = await createBook(bookForm)
       setBooks((curr) => [...curr, book])
       setBookForm(initialBookForm)
+      alert(`Book created successfully! ID: ${book.id}, Title: ${book.title}`)
     }
 
     catch (e) {
@@ -102,6 +103,7 @@ function App() {
 
       const checkout = await createCheckout(checkoutForm)
       setBookCheckouts((curr) => [...curr, checkout])
+      alert(`Checkout created successfully! ID: ${checkout.id}, Book: ${selectedBook?.title}`)
       setCheckoutForm((curr) => ({ ...initialCheckoutForm, book_id: curr.book_id }))
     }
 
