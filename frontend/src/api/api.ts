@@ -80,7 +80,7 @@ export async function createCheckout(
   const response = await fetch(`${API_BASE_URL}/checkouts`, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify(payload),
+    body: JSON.stringify({ ...payload, book_id: Number(payload.book_id) }), // backend expects number type book_id
   })
   if(!response.ok) {
     throw new Error(`Failed to create checkout: ${response.status}`);
