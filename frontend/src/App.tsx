@@ -116,17 +116,17 @@ function App() {
     <main className="layout">
       <header>
         <h1>LibraryConnect Resource Hub</h1>
-        <p>Starter frontend scaffold with TODOs for API integration.</p>
+        <p>Manage books, browse the library catalog, and track checkouts</p>
       </header>
 
       {error ? <p className="error">{error}</p> : null}
 
       <section className="card">
-        <h2>Integration TODO</h2>
+        <h2>Browse Books</h2>
         <p>
-          Route handlers, form wiring, and API calls are intentionally left as TODOs for the team.
+          Load the library catalog to browse available books.
         </p>
-        <button onClick={() => void handleLoadBooks()}>Load Books (TODO API)</button>
+        <button onClick={() => void handleLoadBooks()}>Load Books</button>
       </section>
 
       <BookList
